@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  get "product/:permalink",   to: "products#show",  as: "product"
+  post "product/:permalink",  to: "products#buy",   as: "buy"
+  get "basket",               to: "orders#show"
+  root to: "products#index"
+
+  mount Shoppe::Engine => "/shoppe"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
