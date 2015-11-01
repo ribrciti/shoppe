@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # For Rails version < 4.2.0, add Modernizr
+  config.assets.precompile += %w( vendor/modernizr.js )  
 end
